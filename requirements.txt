@@ -1,3 +1,2 @@
 bassmap
 streamlit
-folium
