@@ -1,5 +1,7 @@
 import streamlit as st
 import bassmap.Foliumatic as bassmap
+from streamlit_folium import st_folium
+import folium
 
 st.set_page_config(layout="wide")
 
