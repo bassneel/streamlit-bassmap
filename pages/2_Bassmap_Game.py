@@ -49,12 +49,12 @@ def generate_options(correct_country, region):
 
 # Start the game
 st.title('Country Guessing Game')
-st.markdown('Can you guess the country highlighted on the map?')
 if st.button('Start'):
+    st.markdown('Can you guess the country highlighted on the map?')
     # Display the map at the beginning of the game
     folium_static(m)
     # Loop through each round
-    for round_number in range(1, rounds + 1):
+    while round_number <= rounds:
         if answer_submitted:
             # Select a random country and region for this round
             region = random.choice(list(countries.keys()))
@@ -80,6 +80,15 @@ if st.button('Start'):
                 score += 1
             else:
                 st.error(f'Sorry, the correct answer was {correct_country}.')
-            # Update the game state
-            round_number += 1
-            answer_submitted = False
+                # Update the game state variables
+                round_number += 1
+                answer_submitted = False
+
+            # Wait for the user to submit their answer
+            st.button('Submit Answer')
+
+            # Update the game state variable
+            answer_submitted = True
+
+        # Display the final score
+        st.markdown(f'Your final score is {score}/{rounds}.')
