@@ -80,15 +80,19 @@ if st.button('Start'):
                 score += 1
             else:
                 st.error(f'Sorry, the correct answer was {correct_country}.')
-                # Update the game state variables
-                round_number += 1
-                answer_submitted = False
+            # Update the game state variables
+            round_number += 1
+            answer_submitted = False
 
-            # Wait for the user to submit their answer
-            st.button('Submit Answer')
+        else:
+            # Display the map at the beginning of the game
+            st.markdown('Can you guess the country highlighted on the map?')
+            folium_static(m)
 
+        # Wait for the user to submit their answer
+        if st.button('Submit Answer'):
             # Update the game state variable
             answer_submitted = True
 
-        # Display the final score
-        st.markdown(f'Your final score is {score}/{rounds}.')
+    # Display the final score
+    st.markdown(f'Your final score is {score}/{rounds}.')
