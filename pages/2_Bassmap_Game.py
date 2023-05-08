@@ -83,17 +83,3 @@ if st.button('Start'):
             # Update the game state
             round_number += 1
             answer_submitted = False
-
-        else:
-            answer_submitted = st.button('Submit')
-    
-    # End the game and display the final score\
-    st.markdown('## Game over!')
-    st.markdown(f'Your final score is {score}/{rounds}')
-
-    # Add a button to restart the game
-    if st.button('Play again'):
-        # Reset the game state
-        score = 0
-        round_number = 1
-        answer_submitted = False
