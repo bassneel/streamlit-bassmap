@@ -1,3 +1,6 @@
 bassmap
 streamlit
 streamlit-folium
+gdal
+numpy
+matplotlib
