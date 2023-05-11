@@ -248,7 +248,7 @@ def get_colorinfrared_st(nir_band_file, red_band_file, green_band_file, georef_f
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-   import gdal
+    import gdal
 
     # Save uploaded files to temporary directory
     nir_band_path = os.path.join(tmp_dir.name, 'nir_band.tif')
