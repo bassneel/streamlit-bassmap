@@ -20,12 +20,14 @@ st.markdown("""
         -   Create Normalized Difference Moisture Index (NDMI) Composite
         -   Create Normalized Difference Vegetation Index (NDVI) Composite
 
+
 -   With IPyLeaflet ([Mapomatic](https://bassneel.github.io/bassmap/examples/Mapomatic/))
     -   Change basemap
     -   Display shapefiles
     -   Display GeoJSON files
     -   Display vector files
     -   Display Cloud Optimized GeoTIFFs
+    
 -   With Folium ([Foliumatic](https://bassneel.github.io/bassmap/examples/Foliumatic/))
     -   Change basemap
     -   Display shapefiles
