@@ -4,10 +4,10 @@ st.title('BassMap')
 
 col1, col2 = st.columns([7, 2])
 
-with col1
+with col1:
     st.video('https://www.youtube.com/watch?v=5dLXxnTaNv4')
     
-with col2
+with col2:
     st.subheader('Features')
 
     st.markdown("""
