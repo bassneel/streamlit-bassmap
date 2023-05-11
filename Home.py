@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title('BassMap')
 
-col1, col2 = st.columns([7, 2])
+col1, col2 = st.columns([7, 4])
 
 with col1:
     st.video('https://www.youtube.com/watch?v=5dLXxnTaNv4')
