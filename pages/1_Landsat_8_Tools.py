@@ -209,7 +209,7 @@ def get_truecolor_st(red_band_file, green_band_file, blue_band_file, georef_file
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    from osgeo import gdal
+    import gdal
 
     # Save uploaded files to temporary directory
     red_band_path = os.path.join(tmp_dir.name, 'red_band.tif')
@@ -248,7 +248,7 @@ def get_colorinfrared_st(nir_band_file, red_band_file, green_band_file, georef_f
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    from osgeo import gdal
+   import gdal
 
     # Save uploaded files to temporary directory
     nir_band_path = os.path.join(tmp_dir.name, 'nir_band.tif')
@@ -287,7 +287,7 @@ def get_false_color_st(swir2_band_file, swir_band_file, red_band_file, georef_fi
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    from osgeo import gdal
+    import gdal
 
     # Save uploaded files to temporary directory
     swir_band_path = os.path.join(tmp_dir.name, 'swir_band.tif')
@@ -326,7 +326,7 @@ def get_health_veg_st(nir_band_file, swir_band_file, blue_band_file, georef_file
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    from osgeo import gdal
+    import gdal
 
     # Save uploaded files to temporary directory
     nir_band_path = os.path.join(tmp_dir.name, 'nir_band.tif')
@@ -365,7 +365,7 @@ def get_ndmi_st(nir_band_file, swir_band_file, georef_file):
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    from osgeo import gdal
+    import gdal
 
     # Save uploaded files to temporary directory
     nir_band_path = os.path.join(tmp_dir.name, 'nir_band.tif')
@@ -400,7 +400,7 @@ def get_ndvi_st(red_band_file, nir_band_file, georef_file):
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    from osgeo import gdal
+    import gdal
 
     # Save uploaded files to temporary directory
     red_band_path = os.path.join(tmp_dir.name, 'red_band.tif')
@@ -441,7 +441,7 @@ with col1:
     # File upload widgets
     red_band = st.file_uploader("Upload red band (4) file")
     green_band = st.file_uploader("Upload green band (3) file")
-    blue_band = st.file_uploader("Upload blue band file (2)")
+    blue_band = st.file_uploader("Upload blue band (2) file")
     nir_band = st.file_uploader("Upload near infrared band (5) file")
     swir_band = st.file_uploader("Upload shortwave infrared band (6) file")
     swir2_band = st.file_uploader("Upload shortwave infrared band (7) file")
@@ -459,15 +459,15 @@ with col2:
 
     # Button to generate false color image
     if st.button("Generate false color image"):
-        if red_band and green_band and blue_band and georef:
+        if swir2_band and swir_band and blue_band and georef:
             # Generate and download image
-            get_truecolor_st(red_band, green_band, blue_band, georef)
-        else:
+            get_false_color_st(swir2_band, swir_band, blue_band, georef)
+        else
             st.warning("Please upload all required files.")
 
     # Button to generate color infrared image
     if st.button("Generate color infrared image"):
-        if red_band and green_band and blue_band and georef:
+        if nir_band and red_band and green_band and georef:
             # Generate and download image
             get_colorinfrared_st(nir_band, red_band, green_band, georef)
         else:
@@ -475,24 +475,24 @@ with col2:
 
     # Button to generate healthy vegetation image
     if st.button("Generate healthy vegetation image"):
-        if red_band and green_band and blue_band and georef:
+        if nir_band and swir_band and blue_band and georef:
             # Generate and download image
-            get_truecolor_st(red_band, green_band, blue_band, georef)
+            get_health_veg_st(nir_band, swir_band, blue_band, georef)
         else:
             st.warning("Please upload all required files.")
 
     # Button to generate NDMI image
     if st.button("Generate NDMI image"):
-        if red_band and green_band and blue_band and georef:
+        if nir_band and swir_band and georef:
             # Generate and download image
-            get_truecolor_st(red_band, green_band, blue_band, georef)
+            get_ndmi_st(nir_band, swir_band, georef)
         else:
             st.warning("Please upload all required files.")
 
     # Button to generate NDVI image
     if st.button("Generate NDVI image"):
-        if red_band and green_band and blue_band and georef:
+        if red_band and nir_band and georef:
             # Generate and download image
-            get_truecolor_st(red_band, green_band, blue_band, georef)
+            get_ndvi_st(red_band, nir_band, georef)
         else:
             st.warning("Please upload all required files.")
