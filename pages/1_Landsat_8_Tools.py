@@ -448,7 +448,6 @@ with col1:
     georef = st.file_uploader("Upload georeference file")
 
 with col2:
-    st.image('https://github.com/bassneel/basspublicfiles/blob/main/bassmap_logo.png')
     st.header("Download Composites")
     # Button to generate true-color image
     if st.button("Generate true color image"):
