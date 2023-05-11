@@ -1,11 +1,12 @@
 import streamlit as st
 
 st.title('BassMap')
-
+st.image('https://img.shields.io/pypi/v/bassmap.svg)](https://pypi.python.org/pypi/bassmap')
+st.divider()
 st.markdown("""
     BassMap is an intuitive Python Package that allows the user to display a variety of features on an iPyLeaflet and Folium map display. In addition the Landsat 8 Tools allows the user to create a variety of multispectral composites using local GeoTIFFs from Landsat 8 spectral bands
 """)
-
+st.divider()
 st.subheader('Features')
 
 st.markdown("""
@@ -31,11 +32,11 @@ st.markdown("""
     -   Display GeoJSON files
     -   Display vector files
 """)
-
+st.divider()
 st.subheader('Demo')
 
 # Add your demo code here
-
+st.divider()
 st.subheader('Credits')
 
 st.markdown("""
