@@ -1,7 +1,9 @@
+from osgeo import gdal
 import streamlit as st
 import bassmap.Foliumatic as bassmap
 from streamlit_folium import st_folium
 import folium
+from osgeo import gdal
 
 st.set_page_config(layout="wide")
 
