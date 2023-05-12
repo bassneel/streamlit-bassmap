@@ -209,8 +209,6 @@ def get_truecolor_st(red_band_file, green_band_file, blue_band_file, georef_file
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    import gdal
-
     # Save uploaded files to temporary directory
     red_band_path = os.path.join(tmp_dir.name, 'red_band.tif')
     with open(red_band_path, 'wb') as f:
@@ -247,8 +245,6 @@ def get_truecolor_st(red_band_file, green_band_file, blue_band_file, georef_file
 def get_colorinfrared_st(nir_band_file, red_band_file, green_band_file, georef_file):
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
-
-    import gdal
 
     # Save uploaded files to temporary directory
     nir_band_path = os.path.join(tmp_dir.name, 'nir_band.tif')
@@ -287,8 +283,6 @@ def get_false_color_st(swir2_band_file, swir_band_file, red_band_file, georef_fi
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    import gdal
-
     # Save uploaded files to temporary directory
     swir_band_path = os.path.join(tmp_dir.name, 'swir_band.tif')
     with open(swir_band_path, 'wb') as f:
@@ -325,8 +319,6 @@ def get_false_color_st(swir2_band_file, swir_band_file, red_band_file, georef_fi
 def get_health_veg_st(nir_band_file, swir_band_file, blue_band_file, georef_file):
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
-
-    import gdal
 
     # Save uploaded files to temporary directory
     nir_band_path = os.path.join(tmp_dir.name, 'nir_band.tif')
@@ -365,8 +357,6 @@ def get_ndmi_st(nir_band_file, swir_band_file, georef_file):
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
 
-    import gdal
-
     # Save uploaded files to temporary directory
     nir_band_path = os.path.join(tmp_dir.name, 'nir_band.tif')
     with open(nir_band_path, 'wb') as f:
@@ -399,8 +389,6 @@ def get_ndmi_st(nir_band_file, swir_band_file, georef_file):
 def get_ndvi_st(red_band_file, nir_band_file, georef_file):
     # Create temporary directory to store uploaded files
     tmp_dir = tempfile.TemporaryDirectory()
-
-    import gdal
 
     # Save uploaded files to temporary directory
     red_band_path = os.path.join(tmp_dir.name, 'red_band.tif')
