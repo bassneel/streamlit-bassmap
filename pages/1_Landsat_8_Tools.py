@@ -462,7 +462,7 @@ with col2:
         if swir2_band and swir_band and blue_band and georef:
             # Generate and download image
             get_false_color_st(swir2_band, swir_band, blue_band, georef)
-        else
+        else:
             st.warning("Please upload all required files.")
 
     # Button to generate color infrared image
